@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)file:///C:/Users/Marise%20Miranda/Downloads/Marises%20Machine.html -->
+<html lang="pt-br">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" type="imagex/png" href="img/iconRoxo.png">
+
+		<title>Vilu's Machine</title>
+
+		<style>
+			body {
+				background-color: #0c0f56;
+				color: white;
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
+				
+			}
+			
+			body{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			body h1{
+				text-align: center;
+			}
+			#spanBase{
+				margin: 10px;
+				width: 70%;
+				height: 170px;
+				justify-content: center;
+				border-radius: 10px;
+				background-color: #715fb4;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 10px;
+			}
+			#spanBase p{
+				margin: 2px;
+			}
+			#spanBase input[type="text"]{
+				width: 300px;
+				height: 20px;
+				border: 0px;
+				border-radius: 5px;
+				padding-left: 10px;
+			}
+			input[type="radio"]{
+				background-color: #0c0f56;
+			}
+			button{
+				cursor: pointer;
+				width: 40%;
+				height: 50px;
+				border-radius: 10px;
+				border: 0px;
+				font-size: 20px;
+				font-weight: bold;
+				background-color: #584b9d;
+				color: white;
+				box-shadow: 8px 7px 20px 0px rgb(58, 36, 110);
+				margin-top: 5px;
+			}
+			button:hover{
+				background-color: #362a6e;
+			}
+			#container{
+				width: 100%;
+				display: grid;
+				align-items: center;
+				justify-content: center;
+				grid-template-columns: 50% 50%;
+			}
+			#divDec, #divOctal, #divBin, #divHex{
+				margin: 10px;
+				width: 95%;
+				height: 150px;
+				justify-content: center;
+				border-radius: 10px;
+				background-color: #715fb4;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			#inputText p{
+				font-weight: bold;
+				font-size: 20px;
+			}
+			#inputText input{
+				border-radius: 5px;
+				border: 5px;
+				padding: 5px;
+				width: 70%;
+				height: 30px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1>Vilu's Machine</h1>
+			<span id="spanBase">
+				<p>Insira um valor e selecione sua base:
+				<input id="inpValor" type="text" placeholder="Digite um valor"></p>
+
+				<p>
+					<input id="inpDec" type="radio" name="base"><label for="inpDec">Decimal</label>
+					<input id="inpOct" type="radio" name="base"><label for="inpOct">Octal</label>
+					<input id="inpBin" type="radio" name="base"><label for="inpBin">Binário</label>
+					<input id="inpHex" type="radio" name="base"><label for="inpHex">Hexadecimal</label>
+				</p>
+				
+				<button onclick="converter()">Converter</button>
+			</span>
+		<div id="container">
+			<div id="divDec">
+				<p><b>Resultado em decimal</b></p>
+				<div style="background-color: #826fc9; 
+						border-radius: 5px; padding: 10px; 
+						color: rgb(255, 255, 255); 
+						width: 80%; 
+						height: 35px; 
+						font-weight: 500;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						align-items: center;">
+					<p id="resultDec"></p>
+				</div>
+			</div>
+
+			<div id="divOctal">
+				<p><b>Resultado em octal</b></p>
+				<div style="background-color: #826fc9; 
+						border-radius: 5px; padding: 10px; 
+						color: rgb(255, 255, 255); 
+						width: 80%; 
+						height: 35px; 
+						font-weight: 500;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						align-items: center;">
+					<p id="resultOctal"></p>
+				</div>
+			</div>
+
+			<div id="divBin">
+				<p><b>Resultado em binário</b></p>
+				<div style="background-color: #826fc9; 
+					border-radius: 5px; padding: 10px; 
+					color: rgb(255, 255, 255); 
+					width: 80%; 
+					height: 35px; 
+					font-weight: 500;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					align-items: center;">
+					<p id="resultBin"></p>
+				</div>
+			</div>
+
+			<div id="divHex">
+				<p><b>Resultado em hexadecimal</b></p>
+				<div style="background-color: #826fc9; 
+						border-radius: 5px; padding: 10px; 
+						color: rgb(255, 255, 255); 
+						width: 80%; 
+						height: 35px; 
+						font-weight: 500;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						align-items: center;">
+					<p id="resultHex"></p>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			function converter() {
+				var valor = inpValor.value;
+				var baseInicial;
+
+				if (inpDec.checked) {
+					baseInicial = 10;
+				} else if (inpBin.checked) {
+					baseInicial = 2;
+				} else if (inpOct.checked) {
+					baseInicial = 8;
+				} else if (inpHex.checked) {
+					baseInicial = 16;
+				} else {
+					baseInicial = 0;
+				}
+
+				if (baseInicial > 0){
+					var numInicial = parseInt(valor, baseInicial);
+					
+					var resultadoDec = numInicial.toString(10);
+					var resultadoBin = numInicial.toString(2);
+					var resultadoOct = numInicial.toString(8);
+					var resultadoHex = numInicial.toString(16).toUpperCase();
+				} else {
+					divDec.innerHTML = 'Selecione a base';
+					divOctal.innerHTML = 'Selecione a base';
+					divBin.innerHTML = 'Selecione a base';
+					divHex.innerHTML = 'Selecione a base';
+				}
+
+				console.log (resultadoDec);
+				console.log (resultadoBin);
+				console.log (resultadoOct);
+				console.log (resultadoHex);
+		
+				document.getElementById("resultDec").innerHTML = ` ${resultadoDec}`;
+				document.getElementById("resultOctal").innerHTML = ` ${resultadoOct}`;
+				document.getElementById("resultBin").innerHTML = ` ${resultadoBin}`;
+				document.getElementById("resultHex").innerHTML = ` ${resultadoHex}`;
+			}
+		</script>
+	</body>
+</html>
