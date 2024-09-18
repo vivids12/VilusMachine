@@ -10,20 +10,18 @@
 
 		<style>
 			body {
-				background-color: #0c0f56;
-				color: white;
-				font-family: Verdana, Geneva, Tahoma, sans-serif;
-				
-			}
-			
-			body{
 				display: flex;
 				flex-direction: column;
 				align-items: center;
+				background-color: #0c0f56;
+				color: white;
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
 			}
+
 			body h1{
 				text-align: center;
 			}
+
 			#spanBase{
 				margin: 10px;
 				width: 70%;
@@ -36,9 +34,11 @@
 				align-items: center;
 				gap: 10px;
 			}
+
 			#spanBase p{
 				margin: 2px;
 			}
+
 			#spanBase input[type="text"]{
 				width: 300px;
 				height: 20px;
@@ -46,9 +46,11 @@
 				border-radius: 5px;
 				padding-left: 10px;
 			}
+
 			input[type="radio"]{
 				background-color: #0c0f56;
 			}
+
 			button{
 				cursor: pointer;
 				width: 40%;
@@ -62,9 +64,11 @@
 				box-shadow: 8px 7px 20px 0px rgb(58, 36, 110);
 				margin-top: 5px;
 			}
+			
 			button:hover{
 				background-color: #362a6e;
 			}
+
 			#container{
 				width: 100%;
 				display: grid;
@@ -72,6 +76,7 @@
 				justify-content: center;
 				grid-template-columns: 50% 50%;
 			}
+
 			#divDec, #divOctal, #divBin, #divHex{
 				margin: 10px;
 				width: 95%;
@@ -83,18 +88,19 @@
 				flex-direction: column;
 				align-items: center;
 			}
-			#inputText p{
-				font-weight: bold;
-				font-size: 20px;
+
+			.resultado{
+				background-color: #826fc9; 
+				border-radius: 5px; padding: 10px; 
+				color: rgb(255, 255, 255); 
+				width: 80%; 
+				height: 35px; 
+				font-weight: 500;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				align-items: center;
 			}
-			#inputText input{
-				border-radius: 5px;
-				border: 5px;
-				padding: 5px;
-				width: 70%;
-				height: 30px;
-			}
-			
 		</style>
 	</head>
 	<body>
@@ -115,64 +121,28 @@
 		<div id="container">
 			<div id="divDec">
 				<p><b>Resultado em decimal</b></p>
-				<div style="background-color: #826fc9; 
-						border-radius: 5px; padding: 10px; 
-						color: rgb(255, 255, 255); 
-						width: 80%; 
-						height: 35px; 
-						font-weight: 500;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						align-items: center;">
+				<div class="resultado">
 					<p id="resultDec"></p>
 				</div>
 			</div>
 
 			<div id="divOctal">
 				<p><b>Resultado em octal</b></p>
-				<div style="background-color: #826fc9; 
-						border-radius: 5px; padding: 10px; 
-						color: rgb(255, 255, 255); 
-						width: 80%; 
-						height: 35px; 
-						font-weight: 500;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						align-items: center;">
+				<div class="resultado">
 					<p id="resultOctal"></p>
 				</div>
 			</div>
 
 			<div id="divBin">
 				<p><b>Resultado em binário</b></p>
-				<div style="background-color: #826fc9; 
-					border-radius: 5px; padding: 10px; 
-					color: rgb(255, 255, 255); 
-					width: 80%; 
-					height: 35px; 
-					font-weight: 500;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					align-items: center;">
+				<div class="resultado">
 					<p id="resultBin"></p>
 				</div>
 			</div>
 
 			<div id="divHex">
 				<p><b>Resultado em hexadecimal</b></p>
-				<div style="background-color: #826fc9; 
-						border-radius: 5px; padding: 10px; 
-						color: rgb(255, 255, 255); 
-						width: 80%; 
-						height: 35px; 
-						font-weight: 500;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						align-items: center;">
+				<div class="resultado">
 					<p id="resultHex"></p>
 				</div>
 			</div>
