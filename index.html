@@ -22,7 +22,7 @@
 				text-align: center;
 			}
 
-			#spanBase{
+			#divBase{
 				margin: 10px;
 				width: 70%;
 				height: 170px;
@@ -35,11 +35,12 @@
 				gap: 10px;
 			}
 
-			#spanBase p{
+			#divBase p{
 				margin: 2px;
+				width: fit-content;
 			}
 
-			#spanBase input[type="text"]{
+			#divBase input[type="text"]{
 				width: 300px;
 				height: 20px;
 				border: 0px;
@@ -105,7 +106,7 @@
 	</head>
 	<body>
 		<h1>Vilu's Machine</h1>
-			<span id="spanBase">
+			<div id="divBase">
 				<p>Insira um valor e selecione sua base:
 				<input id="inpValor" type="text" placeholder="Digite um valor"></p>
 
@@ -117,7 +118,7 @@
 				</p>
 				
 				<button onclick="converter()">Converter</button>
-			</span>
+			</div>
 		<div id="container">
 			<div id="divDec">
 				<p><b>Resultado em decimal</b></p>
