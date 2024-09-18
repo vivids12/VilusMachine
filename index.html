@@ -148,48 +148,49 @@
 				</div>
 			</div>
 		</div>
-
-		<script>
-			function converter() {
-				var valor = inpValor.value;
-				var baseInicial;
-
-				if (inpDec.checked) {
-					baseInicial = 10;
-				} else if (inpBin.checked) {
-					baseInicial = 2;
-				} else if (inpOct.checked) {
-					baseInicial = 8;
-				} else if (inpHex.checked) {
-					baseInicial = 16;
-				} else {
-					baseInicial = 0;
-				}
-
-				if (baseInicial > 0){
-					var numInicial = parseInt(valor, baseInicial);
-					
-					var resultadoDec = numInicial.toString(10);
-					var resultadoBin = numInicial.toString(2);
-					var resultadoOct = numInicial.toString(8);
-					var resultadoHex = numInicial.toString(16).toUpperCase();
-				} else {
-					divDec.innerHTML = 'Selecione a base';
-					divOctal.innerHTML = 'Selecione a base';
-					divBin.innerHTML = 'Selecione a base';
-					divHex.innerHTML = 'Selecione a base';
-				}
-
-				console.log (resultadoDec);
-				console.log (resultadoBin);
-				console.log (resultadoOct);
-				console.log (resultadoHex);
-		
-				document.getElementById("resultDec").innerHTML = ` ${resultadoDec}`;
-				document.getElementById("resultOctal").innerHTML = ` ${resultadoOct}`;
-				document.getElementById("resultBin").innerHTML = ` ${resultadoBin}`;
-				document.getElementById("resultHex").innerHTML = ` ${resultadoHex}`;
-			}
-		</script>
 	</body>
 </html>
+<script>
+	function converter() {
+		var valor = inpValor.value;
+		var baseInicial;
+
+		if (inpDec.checked) {
+			baseInicial = 10;
+		} else if (inpBin.checked) {
+			baseInicial = 2;
+		} else if (inpOct.checked) {
+			baseInicial = 8;
+		} else if (inpHex.checked) {
+			baseInicial = 16;
+		} else {
+			baseInicial = 0;
+		}
+
+		if (baseInicial > 0){
+			var numInicial = parseInt(valor, baseInicial);
+			
+			var resultadoDec = numInicial.toString(10);
+			var resultadoBin = numInicial.toString(2);
+			var resultadoOct = numInicial.toString(8);
+			var resultadoHex = numInicial.toString(16).toUpperCase();
+
+			document.getElementById("resultDec").innerHTML = ` ${resultadoDec}`;
+			document.getElementById("resultOctal").innerHTML = ` ${resultadoOct}`;
+			document.getElementById("resultBin").innerHTML = ` ${resultadoBin}`;
+			document.getElementById("resultHex").innerHTML = ` ${resultadoHex}`;
+		} else {
+			document.getElementById("resultDec").innerHTML = 'Selecione a base';
+			document.getElementById("resultOctal").innerHTML = 'Selecione a base';
+			document.getElementById("resultBin").innerHTML = 'Selecione a base';
+			document.getElementById("resultHex").innerHTML = 'Selecione a base';
+		}
+
+		console.log (resultadoDec);
+		console.log (resultadoBin);
+		console.log (resultadoOct);
+		console.log (resultadoHex);
+
+		
+	}
+</script>
